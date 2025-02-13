@@ -15,7 +15,8 @@
 - **SQL 작성하기**
 
   - 과제 프로그램의 root(최상위) 경로에schedule.sql 파일을 만들고 query를 작성합니다
-    
+
+    <br>
     
 #### Lv 1. 일정 CRUD
 
