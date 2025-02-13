@@ -10,8 +10,6 @@
 
 ![Image](https://github.com/user-attachments/assets/03accacc-5bad-4f8d-b609-3868cf2b0ae2)
 
-#### <br>
-
 - **SQL 작성하기**
 
   - 과제 프로그램의 root(최상위) 경로에schedule.sql 파일을 만들고 query를 작성합니다
