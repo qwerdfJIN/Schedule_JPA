@@ -8,7 +8,7 @@
 
 - API 명세서 및 ERD 작성하기
 
-![Image](https://github.com/user-attachments/assets/03accacc-5bad-4f8d-b609-3868cf2b0ae2)
+![Image](https://github.com/user-attachments/assets/757c19b0-6649-49bf-8e4a-510db3398d96)
 
 - **SQL 작성하기**
 
