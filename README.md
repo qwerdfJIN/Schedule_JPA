@@ -7,7 +7,7 @@
 #### Lv 0. API 명세, ERD, SQL 작성
 
 - API 명세서 및 ERD 작성하기
-- ![Image](https://github.com/user-attachments/assets/03accacc-5bad-4f8d-b609-3868cf2b0ae2)
+![Image](https://github.com/user-attachments/assets/03accacc-5bad-4f8d-b609-3868cf2b0ae2)
 
 #### <br>
 
