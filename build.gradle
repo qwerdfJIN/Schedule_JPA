@@ -26,6 +26,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' //Spring Data JPA 의존성
     implementation 'org.springframework.boot:spring-boot-starter-web' //Spring Web 관련 의존성
+    implementation 'org.mindrot:jbcrypt:0.4'
     compileOnly 'org.projectlombok:lombok' //Lombok 의존성
     runtimeOnly 'com.mysql:mysql-connector-j' //MYSQL 연결
     annotationProcessor 'org.projectlombok:lombok'

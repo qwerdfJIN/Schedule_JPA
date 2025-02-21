@@ -1,8 +1,8 @@
 package com.example.schedule.controller;
 
-import com.example.schedule.dto.CreateScheduleRequestDto;
-import com.example.schedule.dto.ScheduleResponseDto;
-import com.example.schedule.dto.UpdateScheduleRequestDto;
+import com.example.schedule.dto.request.CreateScheduleRequestDto;
+import com.example.schedule.dto.response.ScheduleResponseDto;
+import com.example.schedule.dto.request.UpdateScheduleRequestDto;
 import com.example.schedule.service.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,7 @@ public class ScheduleController {
     public ResponseEntity<ScheduleResponseDto> save(@RequestBody CreateScheduleRequestDto requestDto) {
 
         ScheduleResponseDto scheduleResponseDto =
-                scheduleService.Save(
+                scheduleService.save(
                         requestDto.getTitle(),
                         requestDto.getContents(),
                         requestDto.getName()
@@ -65,6 +65,6 @@ public class ScheduleController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         scheduleService.delete(id);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

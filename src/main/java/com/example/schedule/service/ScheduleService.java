@@ -1,11 +1,12 @@
 package com.example.schedule.service;
 
-import com.example.schedule.dto.ScheduleResponseDto;
-import com.example.schedule.dto.UpdateScheduleRequestDto;
+import com.example.schedule.dto.request.UpdateScheduleRequestDto;
+import com.example.schedule.dto.response.ScheduleResponseDto;
 import com.example.schedule.entity.Schedule;
 import com.example.schedule.entity.User;
 import com.example.schedule.repository.ScheduleRepository;
 import com.example.schedule.repository.UserRepository;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,8 @@ public class ScheduleService {
     private final ScheduleRepository scheduleRepository;
 
     //일정 생성
-    public ScheduleResponseDto Save(String title, String contents, String name) {
+    @Transactional
+    public ScheduleResponseDto save(String title, String contents, String name) {
 
         User findUser = userRepository.findUserByNameOrElseThrow(name);
 
@@ -37,6 +39,7 @@ public class ScheduleService {
     }
 
     //일정 전체 조회
+    @Transactional(readOnly = true)
     public List<ScheduleResponseDto> findAll() {
 
         return scheduleRepository.findAll()
@@ -46,6 +49,7 @@ public class ScheduleService {
     }
 
     //일정 선택 조회
+    @Transactional(readOnly = true)
     public ScheduleResponseDto findById(Long id) {
 
         Schedule findSchedule = scheduleRepository.findByIdOrElseThrow(id);
@@ -59,6 +63,7 @@ public class ScheduleService {
     }
 
     //일정 내용 수정
+    @Transactional
     public ScheduleResponseDto updateSchedule(Long id, UpdateScheduleRequestDto updateScheduleRequestDto) {
         Schedule findSchedule = scheduleRepository.findByIdOrElseThrow(id);
 
@@ -76,6 +81,7 @@ public class ScheduleService {
     }
 
     //일정 삭제
+    @Transactional
     public void delete(Long id) {
 
         Schedule findSchedule = scheduleRepository.findByIdOrElseThrow(id);

@@ -1,6 +1,10 @@
 package com.example.schedule.controller;
 
-import com.example.schedule.dto.*;
+import com.example.schedule.dto.request.SignUpRequestDto;
+import com.example.schedule.dto.request.UpdatePasswordRequestDto;
+import com.example.schedule.dto.request.UpdateUserRequestDto;
+import com.example.schedule.dto.response.SignUpResponseDto;
+import com.example.schedule.dto.response.UserResponseDto;
 import com.example.schedule.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -48,7 +52,7 @@ public class UserController {
 
     //사용자 정보 수정
     @PutMapping("/{id}")
-    public ResponseEntity<UserResponseDto> updateUser(Long id, UpdateUserRequestDto requestDto) {
+    public ResponseEntity<UserResponseDto> updateUser(@PathVariable Long id, UpdateUserRequestDto requestDto) {
         UserResponseDto userResponseDto = userService.updateUser(id, requestDto);
 
         return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
@@ -71,7 +75,7 @@ public class UserController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         userService.delete(id);
 
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
